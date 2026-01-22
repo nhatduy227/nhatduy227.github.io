@@ -36,16 +36,6 @@ const experiences = [
       'Deployed vLEIs purchasing flow on Bloomberg&apos;s terminal within 9 months, increase profit margin to 20% (Stripe).',
     ],
   },
-  {
-    company: 'SIG',
-    role: 'Software Engineer Co-op',
-    location: 'Bala Cynwyd, PA',
-    period: 'Sep. 2021 - Mar. 2022',
-    description: [
-      'Maintained low latency hardware system that handle trading logics to verify 10000+ daily trading records (Python).',
-      'Implemented multi-threaded programming to store 3000+ XML files of trading histories to database (C#, SQL).',
-    ],
-  },
 ]
 
 export default function Experience() {
