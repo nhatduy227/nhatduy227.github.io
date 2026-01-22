@@ -15,6 +15,19 @@
 # production
 /build
 
+# Old static files (replaced by Next.js)
+/index.html
+/css/
+/js/
+/scss/
+/fonts/
+/data/
+/images/
+
+# Keep only public/images and public/data for Next.js
+!/public/images/
+!/public/data/
+
 # misc
 .DS_Store
 *.pem
