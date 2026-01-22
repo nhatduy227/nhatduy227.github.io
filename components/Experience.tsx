@@ -31,9 +31,9 @@ const experiences = [
     location: 'Princeton, NJ',
     period: 'Sep. 2022 - Jul. 2023',
     description: [
-      'Engineered software system that handles creation of vLEIs for Bloomberg\'s partners over 200+ countries (Miro, Figma).',
+      'Engineered software system that handles creation of vLEIs for Bloomberg&apos;s partners over 200+ countries (Miro, Figma).',
       'Integrated back-end system with web app that collects required information for vLEIs generation (Python, React.js).',
-      'Deployed vLEIs purchasing flow on Bloomberg\'s terminal within 9 months, increase profit margin to 20% (Stripe).',
+      'Deployed vLEIs purchasing flow on Bloomberg&apos;s terminal within 9 months, increase profit margin to 20% (Stripe).',
     ],
   },
   {
@@ -56,7 +56,7 @@ export default function Experience() {
       <div className="max-w-4xl mx-auto lg:mx-0">
         <h2 className="text-3xl font-bold text-white mb-12 flex items-center">
           <span className="text-accent text-xl mr-4 font-mono">02.</span>
-          Where I've Worked
+          Where I&apos;ve Worked
         </h2>
 
         <div className="flex flex-col md:flex-row gap-8">

@@ -14,7 +14,7 @@ export default function Hero() {
           I build high-performance systems.
         </h2>
         <p className="text-slate text-base md:text-lg max-w-2xl mb-12 leading-relaxed">
-          I'm a software engineer specializing in architecting{' '}
+          I&apos;m a software engineer specializing in architecting{' '}
           <a
             href="#"
             className="text-accent inline-block relative group"
@@ -30,7 +30,7 @@ export default function Hero() {
             complex algorithms
             <span className="absolute bottom-0 left-0 w-full h-0.5 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
           </a>
-          . Currently, I'm focused on accelerating Deep Learning infrastructure at{' '}
+          . Currently, I&apos;m focused on accelerating Deep Learning infrastructure at{' '}
           <a
             href="https://www.nvidia.com/en-us/"
             target="_blank"

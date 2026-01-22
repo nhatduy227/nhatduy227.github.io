@@ -15,7 +15,7 @@ export default function About() {
           {/* Text Content */}
           <div className="space-y-6 text-slate leading-relaxed order-2 lg:order-1">
             <p>
-              Hello! I'm Nom, a software engineer based in New York, NY.
+              Hello! I&apos;m Nom, a software engineer based in New York, NY.
             </p>
             <p>
               I am passionate about building high-performance systems at the intersection of software engineering and{' '}
@@ -48,7 +48,7 @@ export default function About() {
               {' '}and modern software architecture.
             </p>
             <p>
-              Here are a few technologies I've been working with recently:
+              Here are a few technologies I&apos;ve been working with recently:
             </p>
             
             <ul className="grid grid-cols-2 gap-2 mt-4 list-none">

@@ -37,7 +37,7 @@ export default function Projects() {
       <div className="max-w-4xl mx-auto lg:mx-0">
         <h2 className="text-3xl font-bold text-white mb-12 flex items-center">
           <span className="text-accent text-xl mr-4 font-mono">03.</span>
-          Some Things I've Built
+          Some Things I&apos;ve Built
         </h2>
 
         <div className="grid gap-6">
