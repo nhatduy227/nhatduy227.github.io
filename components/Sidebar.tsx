@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Logo from './Logo'
 
 const navItems = [
   { name: 'About', href: '#about' },
@@ -10,6 +11,19 @@ const navItems = [
 
 export default function Sidebar() {
   const [activeSection, setActiveSection] = useState('about')
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isMobileMenuOpen])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +56,7 @@ export default function Sidebar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
     const element = document.querySelector(href)
     if (element) {
@@ -52,41 +66,90 @@ export default function Sidebar() {
         behavior: 'smooth',
       })
     }
+    setIsMobileMenuOpen(false) // Close mobile menu after navigation
   }
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-64 flex flex-col justify-between py-12 px-8 border-r border-navy-light hidden lg:flex">
-      <div>
-        <div className="mb-12">
-          <h1 className="text-2xl font-bold text-white mb-2">Nom Phan</h1>
-          <p className="text-sm text-slate">Software Engineer</p>
+    <>
+      {/* Mobile Header with Logo and Hamburger */}
+      <div className="fixed top-0 left-0 right-0 z-50 lg:hidden bg-navy-dark/95 backdrop-blur-sm border-b border-navy-light">
+        <div className="flex items-center justify-between px-6 py-4">
+          <Logo />
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="p-2 text-accent hover:text-white transition-colors"
+            aria-label="Toggle menu"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {isMobileMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
         </div>
-
-        <nav className="space-y-2">
-          {navItems.map((item) => {
-            const sectionId = item.href.replace('#', '')
-            const isActive = activeSection === sectionId
-
-            return (
-              <a
-                key={item.name}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className={`flex items-center group relative py-2 text-sm transition-colors cursor-pointer ${
-                  isActive ? 'text-accent' : 'text-slate hover:text-white'
-                }`}
-              >
-                {isActive && (
-                  <span className="absolute -left-8 w-1 h-6 bg-accent rounded-r"></span>
-                )}
-                <span className="relative z-10">{item.name}</span>
-              </a>
-            )
-          })}
-        </nav>
       </div>
 
-      <div className="flex space-x-4">
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-navy-dark/95 z-40 lg:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
+      {/* Sidebar */}
+      <aside
+        className={`fixed left-0 top-0 h-screen w-64 flex flex-col justify-between py-12 px-8 border-r border-navy-light bg-navy-dark z-40 transition-transform duration-300 ${
+          isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
+        } lg:static lg:z-auto`}
+      >
+        <div>
+          <div className="mb-12 hidden lg:block">
+            <Logo />
+          </div>
+
+          <nav className="space-y-2 pt-8 lg:pt-0">
+            {navItems.map((item) => {
+              const sectionId = item.href.replace('#', '')
+              const isActive = activeSection === sectionId
+
+              return (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className={`flex items-center group relative py-2 text-sm transition-colors cursor-pointer ${
+                    isActive ? 'text-accent' : 'text-slate hover:text-white'
+                  }`}
+                >
+                  {isActive && (
+                    <span className="absolute -left-8 w-1 h-6 bg-accent rounded-r"></span>
+                  )}
+                  <span className="relative z-10">{item.name}</span>
+                </a>
+              )
+            })}
+          </nav>
+        </div>
+
+        <div className="flex space-x-4">
         <a
           href="https://github.com"
           target="_blank"
@@ -121,5 +184,6 @@ export default function Sidebar() {
         </a>
       </div>
     </aside>
+    </>
   )
 }

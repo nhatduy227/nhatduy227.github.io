@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function About() {
   return (
-    <section id="about" className="min-h-screen py-32 px-8 lg:pl-8">
+    <section id="about" className="min-h-screen py-20 sm:py-32 px-4 sm:px-8 lg:pl-8">
       <div className="max-w-4xl mx-auto lg:mx-0">
         <h2 className="text-3xl font-bold text-white mb-12 flex items-center">
           <span className="text-accent text-xl mr-4 font-mono">01.</span>
@@ -51,7 +51,7 @@ export default function About() {
               Here are a few technologies I&apos;ve been working with recently:
             </p>
             
-            <ul className="grid grid-cols-2 gap-2 mt-4 list-none">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-4 list-none">
               {['JavaScript (ES6+)', 'TypeScript', 'React', 'Next.js', 'Node.js', 'Python'].map((tech) => (
                 <li key={tech} className="flex items-center before:content-['▹'] before:text-accent before:mr-3 before:text-sm">
                   <span className="text-slate-light">{tech}</span>
@@ -61,8 +61,8 @@ export default function About() {
           </div>
 
           {/* Photo */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[300px] group">
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end mb-8 lg:mb-0">
+            <div className="relative w-full max-w-[250px] sm:max-w-[300px] group">
               {/* Outer shadow/outline effect */}
               <div className="absolute -top-4 -right-4 w-full h-full border-2 border-accent rounded transition-all duration-300 group-hover:-top-3 group-hover:-right-3"></div>
               
@@ -70,7 +70,7 @@ export default function About() {
               <div className="relative z-10 bg-accent rounded p-2 transition-all duration-300 group-hover:bg-accent/90">
                 <div className="relative w-full aspect-square rounded overflow-hidden">
                   <Image
-                    src="/images/nom1.png"
+                    src="/images/nom.png"
                     alt="Nom Phan"
                     fill
                     className="object-cover rounded"

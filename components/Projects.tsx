@@ -33,18 +33,18 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="min-h-screen py-32 px-8 lg:pl-8">
+    <section id="projects" className="min-h-screen py-20 sm:py-32 px-4 sm:px-8 lg:pl-8">
       <div className="max-w-4xl mx-auto lg:mx-0">
         <h2 className="text-3xl font-bold text-white mb-12 flex items-center">
           <span className="text-accent text-xl mr-4 font-mono">03.</span>
           Some Things I&apos;ve Built
         </h2>
 
-        <div className="grid gap-6">
+        <div className="grid gap-4 sm:gap-6">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-navy-light/50 rounded-lg p-6 hover:bg-navy-light transition-all duration-300 border border-navy-light hover:border-accent/50"
+              className="group relative bg-navy-light/50 rounded-lg p-4 sm:p-6 hover:bg-navy-light transition-all duration-300 border border-navy-light hover:border-accent/50"
             >
               <div className="flex justify-between items-start mb-4">
                 <div className="flex-1">

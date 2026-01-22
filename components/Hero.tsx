@@ -2,15 +2,15 @@
 
 export default function Hero() {
   return (
-    <section id="hero" className="min-h-screen flex items-center px-8 lg:pl-8">
-      <div className="max-w-4xl mx-auto lg:mx-0">
+    <section id="hero" className="min-h-screen flex items-center px-4 sm:px-8 lg:pl-8 pt-20 lg:pt-0">
+      <div className="max-w-4xl mx-auto lg:mx-0 w-full">
         <p className="text-accent font-mono text-sm md:text-base mb-4">
           Hi, my name is
         </p>
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
           Nom Phan.
         </h1>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-light mb-6 leading-tight whitespace-nowrap">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-light mb-6 leading-tight">
           I build high-performance systems.
         </h2>
         <p className="text-slate text-base md:text-lg max-w-2xl mb-12 leading-relaxed">
@@ -45,7 +45,7 @@ export default function Hero() {
         <a
           href="/data/NomPhanResume.pdf"
           download="NomPhanResume.pdf"
-          className="inline-block border border-accent text-accent px-6 py-3 rounded font-mono text-sm transition-all hover:bg-accent/10 hover:shadow-[0_0_20px_rgba(127,0,255,0.3)]"
+          className="inline-block border border-accent text-accent px-4 sm:px-6 py-2 sm:py-3 rounded font-mono text-xs sm:text-sm transition-all hover:bg-accent/10 hover:shadow-[0_0_20px_rgba(127,0,255,0.3)]"
         >
           Check out my resume
         </a>

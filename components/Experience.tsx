@@ -52,7 +52,7 @@ export default function Experience() {
   const [activeTab, setActiveTab] = useState(0)
 
   return (
-    <section id="experience" className="min-h-screen py-32 px-8 lg:pl-8">
+    <section id="experience" className="min-h-screen py-20 sm:py-32 px-4 sm:px-8 lg:pl-8">
       <div className="max-w-4xl mx-auto lg:mx-0">
         <h2 className="text-3xl font-bold text-white mb-12 flex items-center">
           <span className="text-accent text-xl mr-4 font-mono">02.</span>
@@ -61,12 +61,12 @@ export default function Experience() {
 
         <div className="flex flex-col md:flex-row gap-8">
           {/* Tab List */}
-          <div className="flex md:flex-col md:border-l border-navy-light overflow-x-auto md:overflow-x-visible">
+          <div className="flex md:flex-col md:border-l border-navy-light overflow-x-auto md:overflow-x-visible -mx-4 sm:mx-0 px-4 sm:px-0 scrollbar-hide">
             {experiences.map((exp, index) => (
               <button
                 key={exp.company}
                 onClick={() => setActiveTab(index)}
-                className={`px-6 py-3 text-sm font-mono whitespace-nowrap border-b md:border-b-0 md:border-l transition-colors ${
+                className={`px-6 py-3 text-sm font-mono whitespace-nowrap border-b md:border-b-0 md:border-l transition-colors flex-shrink-0 ${
                   activeTab === index
                     ? 'text-accent border-accent bg-navy-light/50'
                     : 'text-slate border-navy-light hover:text-accent hover:bg-navy-light/30'

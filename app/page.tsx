@@ -10,7 +10,7 @@ export default function Home() {
     <main className="flex min-h-screen">
       <SpotlightCursor />
       <Sidebar />
-      <div className="flex-1 lg:ml-64">
+      <div className="flex-1 w-full lg:ml-64">
         <Hero />
         <About />
         <Experience />
